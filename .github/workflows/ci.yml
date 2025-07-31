@@ -5,9 +5,17 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - uses: actions/setup-node@v3
     - name: run test
-      run: cd ./back && npm test
+      run: cd ./back && npm install && npm test && npm install --save-dev jest && npm test
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: build docker image
+      run: docker build -t server ./back
