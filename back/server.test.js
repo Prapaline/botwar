@@ -1,9 +1,7 @@
 const request = require('supertest');
 const app = require('./server');
 
-test('addition', () => {
-    expect(1 + 1).toBe(2);
-});
+
 
 describe('GET /action', () => {
     test('should respond with status 200', async () => {
