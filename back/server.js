@@ -1,5 +1,5 @@
-const express = require('express');
-const cors = require('cors');
+import express from 'express';
+import cors from 'cors';
 
 const app = express();
 app.use(cors());
@@ -12,7 +12,6 @@ app.get('/action', (req, res) => {
 
     res.json({ move: randomMove, action: randomAction });
 });
-module.exports = app;
 
 
 const PORT = process.env.PORT || 3000;
