@@ -6,6 +6,10 @@
   "scripts": {
     "test": "jest"
   },
+  "jest": {
+    "extensionsToTreatAsEsm": [".js", ".jsx"],
+    "transform": {}
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
