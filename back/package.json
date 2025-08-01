@@ -7,7 +7,7 @@
     "test": "jest"
   },
   "jest": {
-    "extensionsToTreatAsEsm": [".js", ".jsx"],
+    "extensionsToTreatAsEsm": [".jsx"],
     "transform": {}
   },
   "keywords": [],
