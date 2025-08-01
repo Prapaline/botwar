@@ -15,7 +15,7 @@ app.get('/action', (req, res) => {
 export default app;
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);
 });

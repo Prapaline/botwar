@@ -1,6 +1,13 @@
 import request from 'supertest';
 import app from './server.js';
 
+let server;
+beforeAll((done) => {
+  server = app.listen(3000, () => {
+    console.log('Server started on port 3000');
+    done();
+  });
+});
 
 
 describe('GET /action', () => {
@@ -28,3 +35,6 @@ describe('GET /action', () => {
         expect(validActions).toContain(response.body.action);
     });
 });
+// afterAll((done) => {
+//   server.close(done);
+// });
