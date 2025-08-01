@@ -1,13 +1,22 @@
-import express from 'express';
-import cors from 'cors';
+const express = require('express');
+const cors = require('cors');
 
 const app = express();
 app.use(cors());
 
-app.get('/api', (req,res)=>{
-    res.json({ text : 'Hello World !'});
+app.get('/action', (req, res) => {
+    const moves = ['UP', 'DOWN', 'LEFT', 'RIGHT', 'STAY'];
+    const actions = ['COLLECT', 'ATTACK', 'BOMB', 'NONE'];
+    const randomMove = moves[Math.floor(Math.random() * moves.length)];
+    const randomAction = actions[Math.floor(Math.random() * actions.length)];
+
+    res.json({ move: randomMove, action: randomAction });
 });
 
-app.listen(3000, () => {
-    console.log('Server started on port 3000');
-});
+module.exports = app;
+
+if (require.main === module) {
+    app.listen(3000, () => {
+        console.log('Server started on port 3000');
+    });
+}
