@@ -12,6 +12,7 @@ app.get('/action', (req, res) => {
 
     res.json({ move: randomMove, action: randomAction });
 });
+export default app;
 
 
 const PORT = process.env.PORT || 3000;
