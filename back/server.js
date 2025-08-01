@@ -15,8 +15,9 @@ app.get('/action', (req, res) => {
 
 module.exports = app;
 
+const PORT = process.env.PORT || 3000;
 if (require.main === module) {
-    app.listen(3000, () => {
-        console.log('Server started on port 3000');
+    app.listen(PORT, () => {
+        console.log(`Server started on port ${PORT}`);
     });
 }
